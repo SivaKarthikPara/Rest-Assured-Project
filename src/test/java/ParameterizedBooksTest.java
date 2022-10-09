@@ -1,3 +1,5 @@
+import io.qameta.allure.Link;
+import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
@@ -11,6 +13,7 @@ import java.util.Map;
 import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.Assertions.assertThat;
 
+@Link("SKP-1")
 public class ParameterizedBooksTest {
 
     @BeforeClass
@@ -36,7 +39,7 @@ public class ParameterizedBooksTest {
         bookMap.put("aisle", aisle);
         bookMap.put("author", bookAuthor);
 
-        Response response = given().log().all().body(PayloadUtil.addBookBody(bookMap)).contentType("application/json")
+        Response response = given().filter(new AllureRestAssured()).log().all().body(PayloadUtil.addBookBody(bookMap)).contentType("application/json")
                 .when().post("/Library/Addbook.php");
 
         response.prettyPeek();
@@ -49,7 +52,7 @@ public class ParameterizedBooksTest {
 
     @Test(dataProvider = "bookDataProvider", priority = 2)
     public void getBookDetails(String bookTitle, String bookIsbn, String aisle, String bookAuthor) {
-        Response response = given().queryParam("ID", bookIsbn + aisle).log().all()
+        Response response = given().filter(new AllureRestAssured()).queryParam("ID", bookIsbn + aisle).log().all()
                 .when().get("/Library/GetBook.php");
 
         response.prettyPeek();
@@ -63,7 +66,7 @@ public class ParameterizedBooksTest {
 
     @Test(dataProvider = "bookDataProvider", priority = 3)
     public void deleteBookByID(String bookTitle, String bookIsbn, String aisle, String bookAuthor) {
-        Response response = given().log().all()
+        Response response = given().filter(new AllureRestAssured()).log().all()
                 .body("{\"ID\": \"" + bookIsbn + aisle + "\"}")
                 .when().delete("/Library/DeleteBook.php");
 
