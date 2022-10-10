@@ -16,7 +16,7 @@ public class JiraRestApiTest {
     @BeforeClass
     public void setUp() {
         RestAssured.baseURI = "https://sivakarthikpara.atlassian.net";
-        RestAssured.basic("sivakarthikpara@gmail.com", "zAYuWuGQxmJTO5hBheUA872F");
+        RestAssured.basic("USER_NAME", "API_TOKEN");
     }
 
     @Test
