@@ -1,6 +1,11 @@
+package util;
+
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -61,5 +66,16 @@ public class PayloadUtil {
             e.printStackTrace();
         }
         return "{ \"msg\" : \"No Json\"}";
+    }
+
+    public static String readJsonFile(String filePath) {
+        try {
+            byte[] bytes = Files.readAllBytes(Paths.get(filePath));
+            String jsonString = new String(bytes);
+            return jsonString;
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+            return "File not found";
+        }
     }
 }
