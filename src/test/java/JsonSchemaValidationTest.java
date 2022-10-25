@@ -26,7 +26,7 @@ public class JsonSchemaValidationTest {
                 .log().all()
                 .accept("application/json")
                 .contentType("application/json")
-                .auth().preemptive().basic("sivakarthikpara@gmail.com", "SAfdrCGxzXiPu7YGSsX5A3CB")
+                .auth().preemptive().basic("mail@mail.com", "token")
                 .body(PayloadUtil.readJsonFile("src/main/resources/json.models/jira-create-issue.json"))
                 .when().post("/rest/api/3/issue");
 
