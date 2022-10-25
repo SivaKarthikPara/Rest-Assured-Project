@@ -1,0 +1,71 @@
+<div>POST to https://sivakarthikpara.atlassian.net/rest/api/3/issue</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+    {
+    &quot;fields&quot;: {
+        &quot;summary&quot;: &quot;Summary - Rest api create issue&quot;,
+        &quot;issuetype&quot;: {
+            &quot;id&quot;: &quot;10002&quot;
+        },
+        &quot;project&quot;: {
+            &quot;key&quot;: &quot;PYMT&quot;
+        },
+        &quot;description&quot;: {
+            &quot;type&quot;: &quot;doc&quot;,
+            &quot;version&quot;: 1,
+            &quot;content&quot;: [
+                {
+                    &quot;type&quot;: &quot;paragraph&quot;,
+                    &quot;content&quot;: [
+                        {
+                            &quot;text&quot;: &quot;This is the description. --&gt; https://sivakarthikpara.atlassian.net/rest/api/3/issue&quot;,
+                            &quot;type&quot;: &quot;text&quot;
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
+    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: application/json</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X POST &#39;https://sivakarthikpara.atlassian.net/rest/api/3/issue&#39; -H &#39;Accept: application/json&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;fields&quot;: {
+        &quot;summary&quot;: &quot;Summary - Rest api create issue&quot;,
+        &quot;issuetype&quot;: {
+            &quot;id&quot;: &quot;10002&quot;
+        },
+        &quot;project&quot;: {
+            &quot;key&quot;: &quot;PYMT&quot;
+        },
+        &quot;description&quot;: {
+            &quot;type&quot;: &quot;doc&quot;,
+            &quot;version&quot;: 1,
+            &quot;content&quot;: [
+                {
+                    &quot;type&quot;: &quot;paragraph&quot;,
+                    &quot;content&quot;: [
+                        {
+                            &quot;text&quot;: &quot;This is the description. --&gt; https://sivakarthikpara.atlassian.net/rest/api/3/issue&quot;,
+                            &quot;type&quot;: &quot;text&quot;
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}&#39;
+</div>

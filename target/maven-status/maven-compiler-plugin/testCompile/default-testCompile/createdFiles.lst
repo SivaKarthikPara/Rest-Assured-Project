@@ -1,0 +1,6 @@
+JiraRestApiTest.class
+GoogleMapsApiTest.class
+JsonSchemaValidationTest.class
+JsonFileReader.class
+JsonValidationsTest.class
+ParameterizedBooksTest.class

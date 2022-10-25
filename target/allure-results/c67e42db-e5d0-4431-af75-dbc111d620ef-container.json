@@ -1,0 +1,1 @@
+{"uuid":"c67e42db-e5d0-4431-af75-dbc111d620ef","name":"JiraRestApiTest","children":["e3c2aa46-f4b2-430b-b677-ec4e1025f39e"],"befores":[{"name":"setUp","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1666715221827,"stop":1666715221838}],"afters":[],"start":1666715214373,"stop":1666715228940}
